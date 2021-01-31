@@ -8,7 +8,7 @@ import os
 
 game = Ursina()
 
-window.title = 'Block Game v. Training Test (for educational purposes)'
+window.title = 'Block Game v. Alpha 1.0 development version'
 window.borderless = False
 window.fullscreen = False
 window.exit_button.visible = False
@@ -26,6 +26,8 @@ block_types = ["air",
                "grass"] # a list of all the blocks in order, max 256
 rendered_blocks_list = [] # a list of all the blocks rendered
 chunk_list = []
+
+game_version = "Alpha 1.0 (work in progress)"
 # ========== load the world ============
 def reload_world():
     global rendered_blocks_list
