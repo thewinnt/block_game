@@ -5,12 +5,15 @@ class block_type:
         self.name = name
 
         self.vertex_positions  = number.vertex_positions
-        self.indices = number.indices
         self.tex_coords = number.tex_coords.copy()
+        self.shading_values = number.shading.copy()
 
-        def set_block_face(side, texture):
+        def set_block_face(face, texture):
+            print(self.tex_coords[face])
+            self.tex_coords[face] = self.tex_coords[face].copy()
+
             for vertex in range(4):
-                self.tex_coords[side * 12 + vertex * 3 + 2] = texture
+                self.tex_coords[face][vertex * 3 + 2] = texture
 
         for face in block_face_textures: # go through all the block faces we specified a texture for
             texture = block_face_textures[face] # get that face's texture  
